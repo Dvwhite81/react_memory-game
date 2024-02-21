@@ -1,0 +1,100 @@
+#navbar {
+  align-items: center;
+  background-color: var(--dark-bg);
+  display: flex;
+  height: var(--nav-height);
+  justify-content: space-evenly;
+  position: relative;
+  width: 100%;
+}
+
+/* Logo link */
+.logo-link_container {
+  display: flex;
+  height: var(--nav-height);
+  width: fit-content;
+}
+
+.logo-link_link {
+  display: flex;
+}
+
+.logo-link_img {
+  height: 70%;
+  margin: auto;
+}
+
+/* Nav links */
+.navlink_item {
+  margin: auto;
+}
+
+.navlink_item a {
+  color: var(--blue-bg-lightest);
+  font-size: larger;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navlink_item:hover,
+.logo-link_link:hover {
+  transform: scale(1.2);
+  transition: ease 0.2s;
+}
+
+/* Dropdown */
+#nav_dropdown-container {
+  height: var(--nav-height);
+  position: absolute;
+  right: 0;
+  width: calc(var(--nav-height) / 2);
+}
+
+#nav_dropdown-icon {
+  background-image: url(/src/assets/images/dots-icon-white.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 60%;
+  height: 100%;
+  width: 100%;
+}
+
+#nav_dropdown-icon:hover {
+  background-color: var(--light-color);
+  background-image: url(/src/assets/images/dots-icon-black.png);
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  cursor: pointer;
+  transition: ease 0.2s;
+}
+
+@media screen and (min-width: 480px) {
+  #nav_dropdown-container {
+    height: var(--nav-height);
+    position: absolute;
+    right: 1rem;
+    width: var(--nav-height);
+}
+
+  #nav_dropdown-icon {
+    background-image: url(/src/assets/images/hamburger-icon-white.png);
+  }
+
+  #nav_dropdown-icon:hover {
+    background-image: url(/src/assets/images/hamburger-icon-black.png);
+  }
+}
+
+.dropdown-navlist {
+  background-color: var(--dark-bg);
+  border-bottom-left-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  gap: 1rem;
+  padding: 2rem;
+  position: absolute;
+  right: -1rem;
+  top: var(--nav-height);
+  width: fit-content;
+}

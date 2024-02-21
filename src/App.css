@@ -1,33 +1,54 @@
-#root {
-  margin: 0 auto;
-  padding: 2rem;
+:root {
+  /* NavBar */
+  --dark-bg: #36454F;
+  --light-color: whitesmoke;
+  --nav-height: 10vh;
+  /* Game */
+  --board-height: 75vh;
+  --board-width: 60vw;
+  --card-height: calc((var(--board-height) * 0.8) / 3);
+  --card-width: calc((var(--board-width) * 0.8) / 8);
+  /* Global */
+  --blue-bg-dark: #1e8aa9;
+  --blue-bg-medium: #2ba9f1;
+  --blue-bg-light: #96e8ff;
+  --blue-bg-lightest: #cbf4ff;
+  --orange-color: #f1842b;
+}
+
+/* Main container */
+#app {
+  background: linear-gradient(var(--blue-bg-light), var(--blue-bg-medium));
+  height: 100%;
+}
+
+/* Page containers */
+.page {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+}
+
+/* Global */
+.btn {
+  background-color: var(--blue-bg-lightest);
+  border: none;
+  border-radius: 5px;
+  color: var(--dark-bg);
+  cursor: pointer;
+  font-size: large;
+  font-weight: bold;
+  margin: auto;
+  padding: 0.3rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.btn:hover {
+  background-color: var(--blue-bg-dark);
+  color: var(--blue-bg-lightest);
+  transform: scale(1.2);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.hide {
+  display: none !important;
 }
