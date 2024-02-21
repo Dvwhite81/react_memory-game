@@ -1,0 +1,20 @@
+#game-board {
+  align-items: center;
+  background-color: var(--blue-bg-dark);
+  display: grid;
+  height: var(--board-height);
+  justify-content: center;
+  width: var(--board-width);
+}
+
+.game-card {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  object-fit: contain;
+}
+
+img.game-card-img {
+  object-fit: scale-down;
+  width: 100%;
+}

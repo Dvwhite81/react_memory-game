@@ -15,29 +15,58 @@ export const NUM_OPTIONS = [
   '40'
 ];
 
-const getRandom = (urls: string[]) => {
-  const random = Math.floor(Math.random() * urls.length);
-  return urls[random];
+export const shuffleArray = (array: string[]) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
 }
 
 export const getRandomUrls = (urls: string[], gameNumCards: number) => {
-  const firstHalf: string[] = [];
+  const results = [];
 
-  while (firstHalf.length < gameNumCards) {
-    const random = getRandom(urls);
-    if (!firstHalf.includes(random)) {
-      firstHalf.push(random);
+  const firstHalf = urls.slice(0, gameNumCards);
+  shuffleArray(firstHalf);
+  results.push(...firstHalf);
+
+  const secondHalf = shuffleArray(firstHalf);
+  results.push(...secondHalf);
+  return results;
+}
+
+export const getGrid = (cardsLength: number) => {
+  let cols = 1;
+  let rows = 1;
+
+  switch (cardsLength) {
+    case 10: {
+      cols = 5;
+      rows = 2;
+      break;
+    }
+    case 20: {
+      cols = 5;
+      rows = 4;
+      break;
+    }
+    case 30: {
+      cols = 6;
+      rows = 5;
+      break;
+    }
+    case 40: {
+      cols = 8;
+      rows = 5;
+      break;
+    }
+    default: {
+      break;
     }
   }
 
-  const secondHalf: string[] = [];
-
-  while (secondHalf.length < firstHalf.length) {
-    const random = getRandom(firstHalf);
-    if (!secondHalf.includes(random)) {
-      secondHalf.push(random);
-    }
-  }
-
-  return [...firstHalf, ...secondHalf];
+  return [cols, rows];
 }

@@ -10,6 +10,7 @@
 
 /* Logo link */
 .logo-link_container {
+  cursor: pointer;
   display: flex;
   height: var(--nav-height);
   width: fit-content;
@@ -37,7 +38,7 @@
 }
 
 .navlink_item:hover,
-.logo-link_link:hover {
+.logo-link_container:hover {
   transform: scale(1.2);
   transition: ease 0.2s;
 }

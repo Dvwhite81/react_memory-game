@@ -1,29 +1,21 @@
-import { useEffect, useState } from 'react';
 import GameCard from '../components/Game/GameCard';
-import { getRandomUrls } from '../utils/helpers';
+import '../components/Game/Game.css';
+import { getGrid } from '../utils/helpers';
 
 interface GameProps {
-  urls: string[]
-  gameNumCards: number
+  cards: string[]
 }
 
-const Game = ({ urls, gameNumCards }: GameProps) => {
-  const [cards, setCards] = useState<string[]>([]);
-
-  useEffect(() => {
-    const getCards = () => {
-      const randomUrls = getRandomUrls(urls, gameNumCards);
-      setCards(randomUrls);
-    }
-
-    getCards();
-  });
+const Game = ({ cards }: GameProps) => {
+  const [rows, cols] = getGrid(cards.length);
+  console.log('Game rows, cols:', rows, cols);
+  const gridStyle = { gridTemplateColumns: `repeat(${cols}, 1fr)`, gridTemplateRows: `repeat(${rows}, 1fr)` };
 
   return (
     <div id="game" className="page">
-      <div id="game-board">
-        {cards.map((url) =>
-          <GameCard key={url} url={url} />
+      <div id="game-board" style={gridStyle}>
+        {cards.map((url, index) =>
+          <GameCard key={index} url={url} rows={rows} cols={cols} />
         )}
       </div>
     </div>

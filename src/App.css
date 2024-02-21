@@ -5,7 +5,7 @@
   --nav-height: 10vh;
   /* Game */
   --board-height: 75vh;
-  --board-width: 60vw;
+  --board-width: 90vw;
   --card-height: calc((var(--board-height) * 0.8) / 3);
   --card-width: calc((var(--board-width) * 0.8) / 8);
   /* Global */
@@ -19,6 +19,8 @@
 /* Main container */
 #app {
   background: linear-gradient(var(--blue-bg-light), var(--blue-bg-medium));
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
@@ -27,6 +29,7 @@
   display: flex;
   flex-direction: column;
   height: fit-content;
+  margin: auto;
 }
 
 /* Global */

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import CategorySection from '../components/Setup/CategorySection';
 import SearchInput from '../components/Setup/SearchInput';
 import StartBtn from '../components/Setup/StartBtn';
@@ -11,20 +10,11 @@ interface SetupProps {
   setGameCategory: (value: string) => void
   gameNumCards: string
   setGameNumCards: (value: string) => void
-  handleSearch: () => void
+  startGame: () => void
 }
 
-const Setup = ({ gameCategory, setGameCategory, gameNumCards, setGameNumCards, handleSearch }: SetupProps) => {
-  const navigate = useNavigate();
-
+const Setup = ({ gameCategory, setGameCategory, gameNumCards, setGameNumCards, startGame }: SetupProps) => {
   const [inputVisible, setInputVisible] = useState(false);
-
-  const startGame = () => {
-    if (gameCategory && gameNumCards) {
-      handleSearch();
-      navigate('/game')
-    }
-  }
 
   return (
     <div id="setup" className="page">
@@ -39,7 +29,7 @@ const Setup = ({ gameCategory, setGameCategory, gameNumCards, setGameNumCards, h
           Number of Cards: {gameNumCards}
         </p>
       </div>
-      <StartBtn startGame={startGame} />
+      <StartBtn handleClick={startGame} />
     </div>
   )
 }

@@ -2,12 +2,16 @@ import LogoLink from './LogoLink';
 import './NavBar.css';
 import NavLink from './NavLink';
 
-const NavBar = () => {
+interface NavBarProps {
+  reset: () => void
+}
+
+const NavBar = ({ reset }: NavBarProps) => {
 
   return (
     <nav id="navbar">
       <NavLink label="Profile" path="/profile" />
-      <LogoLink />
+      <LogoLink reset={reset} />
       <NavLink label="Scores" path="/scores" />
     </nav>
   )

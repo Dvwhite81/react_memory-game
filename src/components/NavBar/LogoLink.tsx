@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
+interface LogoLinkProps {
+  reset: () => void
+}
 
-const LogoLink = () => {
+const LogoLink = ({ reset }: LogoLinkProps) => {
   return (
-    <div className="logo-link_container">
-      <Link to="/" className="logo-link_link">
-        <img className="logo-link_img" src="/src/assets/images/MatchLogo.png" alt="logo" />
-      </Link>
+    <div className="logo-link_container" onClick={reset}>
+      <img className="logo-link_img" src="/src/assets/images/MatchLogo.png" alt="logo" />
     </div>
   );
 }

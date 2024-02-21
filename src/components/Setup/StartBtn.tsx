@@ -1,14 +1,14 @@
 interface StartBtnProps {
-  startGame: () => void
+  handleClick: () => void
 }
 
-const StartBtn = ({ startGame }: StartBtnProps) => {
+const StartBtn = ({ handleClick }: StartBtnProps) => {
   return (
     <button
       id="setup-submit"
       className="btn"
       type="submit"
-      onClick={startGame}
+      onClick={handleClick}
     >
       Start
     </button>
