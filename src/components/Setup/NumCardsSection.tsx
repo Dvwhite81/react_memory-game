@@ -2,11 +2,11 @@ import { NUM_OPTIONS } from '../../utils/helpers';
 import SetupBtn from './SetupBtn';
 
 interface NumCardsSectionProps {
-  gameCards: string
-  setGameCards: (value: string) => void
+  gameNumCards: string
+  setGameNumCards: (value: string) => void
 }
 
-const NumCardsSection = ({ gameCards, setGameCards }: NumCardsSectionProps) => {
+const NumCardsSection = ({ gameNumCards, setGameNumCards }: NumCardsSectionProps) => {
   const nums = NUM_OPTIONS.map((num) => num.toString());
 
   return (
@@ -18,8 +18,8 @@ const NumCardsSection = ({ gameCards, setGameCards }: NumCardsSectionProps) => {
         <SetupBtn
           key={num}
           option={num}
-          gameOption={gameCards}
-          setGameOption={setGameCards}
+          gameOption={gameNumCards}
+          setGameOption={setGameNumCards}
         />
       )}
     </div>

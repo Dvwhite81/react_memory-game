@@ -9,18 +9,18 @@ import '../components/Setup/Setup.css';
 interface SetupProps {
   gameCategory: string
   setGameCategory: (value: string) => void
-  gameCards: string
-  setGameCards: (value: string) => void
+  gameNumCards: string
+  setGameNumCards: (value: string) => void
   handleSearch: () => void
 }
 
-const Setup = ({ gameCategory, setGameCategory, gameCards, setGameCards, handleSearch }: SetupProps) => {
+const Setup = ({ gameCategory, setGameCategory, gameNumCards, setGameNumCards, handleSearch }: SetupProps) => {
   const navigate = useNavigate();
 
   const [inputVisible, setInputVisible] = useState(false);
 
   const startGame = () => {
-    if (gameCategory && gameCards) {
+    if (gameCategory && gameNumCards) {
       handleSearch();
       navigate('/game')
     }
@@ -30,13 +30,13 @@ const Setup = ({ gameCategory, setGameCategory, gameCards, setGameCards, handleS
     <div id="setup" className="page">
       <CategorySection gameCategory={gameCategory} setGameCategory={setGameCategory} setInputVisible={setInputVisible} />
       {inputVisible && <SearchInput setGameCategory={setGameCategory} setInputVisible={setInputVisible} />}
-      <NumCardsSection gameCards={gameCards} setGameCards={setGameCards} />
+      <NumCardsSection gameNumCards={gameNumCards} setGameNumCards={setGameNumCards} />
       <div id="setup-info">
         <p className="setup-info-text">
           Category: {gameCategory}
         </p>
         <p className="setup-info-text">
-          Number of Cards: {gameCards}
+          Number of Cards: {gameNumCards}
         </p>
       </div>
       <StartBtn startGame={startGame} />

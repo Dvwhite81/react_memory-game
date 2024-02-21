@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   const [gameCategory, setGameCategory] = useState('cats');
-  const [gameCards, setGameCards] = useState('40');
+  const [gameNumCards, setGameNumCards] = useState('40');
   const [urls, setUrls] = useState([]);
 
   const handleSearch = async () => {
@@ -24,12 +24,12 @@ function App() {
           <Setup
             gameCategory={gameCategory}
             setGameCategory={setGameCategory}
-            gameCards={gameCards}
-            setGameCards={setGameCards}
+            gameNumCards={gameNumCards}
+            setGameNumCards={setGameNumCards}
             handleSearch={handleSearch}
           />
         } />
-        <Route path="/game" element={<Game urls={urls} gameCards={parseInt(gameCards, 10)} />} />
+        <Route path="/game" element={<Game urls={urls} gameNumCards={parseInt(gameNumCards, 10)} />} />
       </Routes>
     </div>
   );
