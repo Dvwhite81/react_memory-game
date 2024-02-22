@@ -1,14 +1,14 @@
+import { getGrid } from "../utils/helpers";
 import GameCard from '../components/Game/GameCard';
 import '../components/Game/Game.css';
-import { getGrid } from '../utils/helpers';
 
 interface GameProps {
   cards: string[]
 }
 
 const Game = ({ cards }: GameProps) => {
+
   const [rows, cols] = getGrid(cards.length);
-  console.log('Game rows, cols:', rows, cols);
   const gridStyle = { gridTemplateColumns: `repeat(${cols}, 1fr)`, gridTemplateRows: `repeat(${rows}, 1fr)` };
 
   return (

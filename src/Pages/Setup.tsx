@@ -18,17 +18,15 @@ const Setup = ({ gameCategory, setGameCategory, gameNumCards, setGameNumCards, s
 
   return (
     <div id="setup" className="page">
+      <h2 className="setup-section-heading">
+        CATEGORIES
+      </h2>
       <CategorySection gameCategory={gameCategory} setGameCategory={setGameCategory} setInputVisible={setInputVisible} />
       {inputVisible && <SearchInput setGameCategory={setGameCategory} setInputVisible={setInputVisible} />}
+      <h2 className="setup-section-heading">
+        CARDS
+      </h2>
       <NumCardsSection gameNumCards={gameNumCards} setGameNumCards={setGameNumCards} />
-      <div id="setup-info">
-        <p className="setup-info-text">
-          Category: {gameCategory}
-        </p>
-        <p className="setup-info-text">
-          Number of Cards: {gameNumCards}
-        </p>
-      </div>
       <StartBtn handleClick={startGame} />
     </div>
   )

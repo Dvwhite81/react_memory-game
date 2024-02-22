@@ -10,12 +10,15 @@ interface CategorySectionProps {
 
 const CategorySection = ({ gameCategory, setGameCategory, setInputVisible }: CategorySectionProps) => {
   const [selectedClass, setSelectedClass] = useState('');
+  const [btnText, setBtnText] = useState('custom');
 
   useEffect(() => {
     if (!CATEGORIES.includes(gameCategory)) {
       setSelectedClass('selected-btn');
+      setBtnText(gameCategory);
     } else {
       setSelectedClass('');
+      setBtnText('custom');
     }
   });
 
@@ -37,7 +40,7 @@ const CategorySection = ({ gameCategory, setGameCategory, setInputVisible }: Cat
         type="button"
         onClick={() => setInputVisible(true)}
       >
-        Custom
+        {btnText}
       </button>
     </div>
   );

@@ -2,6 +2,7 @@
   font-size: large;
 }
 
+/* Main sections */
 #setup div {
   margin: 0 auto;
   padding: 2rem;
@@ -15,13 +16,8 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-div#setup-info {
-  padding: 0;
-}
-
-.setup-info-text {
-  font-weight: bold;
-  margin-bottom: 1rem;
+.setup-section-heading {
+  text-align: center;
   text-transform: capitalize;
 }
 
@@ -47,7 +43,6 @@ div#setup-info {
 
 /* Buttons */
 .setup-btn {
-  text-transform: uppercase;
   width: 90%;
 }
 
