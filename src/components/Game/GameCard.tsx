@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 interface GameCardProps {
   url: string
   cols: number
@@ -5,13 +7,29 @@ interface GameCardProps {
 }
 
 const GameCard = ({ url, cols, rows }: GameCardProps) => {
-  const height = `calc((var(--board-height) * 0.8) / ${rows})`;
-  const width = `calc((var(--board-width) * 0.8) / ${cols})`
+  const [isFaceUp, setIsFaceUp] = useState(false);
+
+  const height = `calc((var(--card-height) / ${rows}))`;
+  const width = `calc((var(--card-width) / ${cols}))`
   const cardStyle = { height: height, width: width };
 
   return (
-    <div className="game-card">
-      <img className="game-card-img" src={url} alt="card image" style={cardStyle}/>
+    <div className="game-card" onClick={() => setIsFaceUp((prev) => !prev)}>
+      {isFaceUp ? (
+        <img
+          className="game-card-img"
+          src={url}
+          alt="card image"
+          style={cardStyle}
+        />
+      ) : (
+        <img
+          className="card-back"
+          src="/src/assets/images/card-back-horizontal.png"
+          alt="card back image"
+          style={cardStyle}
+        />
+      )}
     </div>
   )
 }

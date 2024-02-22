@@ -1,6 +1,8 @@
 #game-board {
   align-items: center;
-  background-color: var(--blue-bg-dark);
+  background: var(--blue-gradient);
+  border: 10px inset var(--blue-bg-lightest);
+  border-radius: 10px;
   display: grid;
   height: var(--board-height);
   justify-content: center;
@@ -9,12 +11,22 @@
 
 .game-card {
   align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   object-fit: contain;
 }
 
+.game-card:hover {
+  transform: scale(1.2);
+}
+
 img.game-card-img {
   object-fit: scale-down;
   width: 100%;
+}
+
+.card-back {
+  border-radius: 5px;
 }

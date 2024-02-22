@@ -4,21 +4,22 @@
   --light-color: whitesmoke;
   --nav-height: 10vh;
   /* Game */
-  --board-height: 75vh;
-  --board-width: 90vw;
-  --card-height: calc((var(--board-height) * 0.8) / 3);
-  --card-width: calc((var(--board-width) * 0.8) / 8);
+  --board-height: 85vh;
+  --board-width: 60vw;
+  --card-height: calc((var(--board-height) * 0.8));
+  --card-width: calc((var(--board-width) * 0.8));
   /* Global */
   --blue-bg-dark: #1e8aa9;
   --blue-bg-medium: #2ba9f1;
   --blue-bg-light: #96e8ff;
   --blue-bg-lightest: #cbf4ff;
   --orange-color: #f1842b;
+  --blue-gradient: linear-gradient(var(--blue-bg-light), var(--blue-bg-medium));
 }
 
 /* Main container */
 #app {
-  background: linear-gradient(var(--blue-bg-light), var(--blue-bg-medium));
+  background: var(--blue-gradient);
   display: flex;
   flex-direction: column;
   height: 100%;
