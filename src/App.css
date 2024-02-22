@@ -53,6 +53,6 @@
   transform: scale(1.2);
 }
 
-.hide {
+.hidden {
   display: none !important;
 }

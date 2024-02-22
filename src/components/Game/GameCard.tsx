@@ -15,21 +15,18 @@ const GameCard = ({ url, cols, rows }: GameCardProps) => {
 
   return (
     <div className="game-card" onClick={() => setIsFaceUp((prev) => !prev)}>
-      {isFaceUp ? (
-        <img
-          className="game-card-img"
-          src={url}
-          alt="card image"
-          style={cardStyle}
-        />
-      ) : (
-        <img
-          className="card-back"
-          src="/src/assets/images/card-back-horizontal.png"
-          alt="card back image"
-          style={cardStyle}
-        />
-      )}
+      <img
+        className="game-card-img"
+        src={url}
+        alt="card image"
+        style={cardStyle}
+      />
+      <img
+        className={`card-back ${isFaceUp ? 'hidden' : ''}`}
+        src="/src/assets/images/card-back-horizontal.png"
+        alt="card back image"
+        style={cardStyle}
+      />
     </div>
   )
 }
